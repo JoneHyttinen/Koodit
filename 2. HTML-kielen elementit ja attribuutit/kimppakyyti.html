@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kimppakyyti</title>
+<style>
+label {
+	display: block;
+	width: 6em;
+	float: left;
+}
+body {
+    background-image: url(https://static.luolasto.org/file/varavarasto/46873/9oece.jpg);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+h3{
+    color:rgb(255, 255, 255);
+    font-size: 200%;
+}
+p{
+    color: yellow;
+    font-size: 150%;
+}
+</style>
+</head>
+<body>
+
+	<h3><b>Kimppakyyti</b></h3>
+
+	<form>
+		<p>
+			<label>Kilometrit:</label> 
+			<input type="text" id="kilometrit" size="5">
+		</p>
+		<p>
+			<label>Kulutus:</label> 
+			<input type="text" id="kulutus" size="5">
+		</p>
+		<p>
+			<label>Litrahinta:</label> 
+			<input type="text" id="litrahinta" size="5">
+		</p>
+		<p>
+			<label>Määrä:</label> 
+			<input type="text" id="maara" size="5">
+		</p>
+		<p>
+			<input type="button" value="Laske" onclick="laskeBensat()">
+		</p>
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+	 
+	<script>
+	function laskeBensat() {
+		let kilometrit = Number(document.getElementById("kilometrit").value);
+        let kulutus = Number(document.getElementById("kulutus").value);
+        let litrahinta = Number(document.getElementById("litrahinta").value);
+        let maara = Number(document.getElementById("maara").value);
+        let kustannus = kulutus / 100.0 * litrahinta * kilometrit / maara;
+        document.getElementById("vastaus").innerHTML = "Polttoaine per henkilö on " +
+        kustannus.toFixed(2) + " euroa ";
+	}
+</script>
+</body>
+</html>

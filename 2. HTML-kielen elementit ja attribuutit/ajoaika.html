@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ajoaika</title>
+</head>
+
+<body>
+	<h3>Ajoaika</h3>
+
+	<form>
+		<label>Ajoaika minuutteina: </label>
+		<input type="text" id="minuutit" size="4">
+		<input type="button" id="painike" value="Muunna" onClick="muunnaMinuutit()">
+	</form>
+
+	<p id="vastaus"></p>
+
+	<script>
+		function muunnaMinuutit() {
+            let minuutit = Number(document.getElementById("minuutit").value);
+            let tunnit = Math.floor(60/1);
+            let minuutteja = tunnit % 60;
+            let pyoristys = minuutteja = match.Ceil(0-59);
+            document.getElementById("vastaus").innerHTML = " Tunteja " + tunnit.toFixed(0) + " ja minuutteja "
+            + minuutteja.toFixed(0) + " <br>Pyöristettynä lähimpään tuntiin ylöspäin "
+             + pyoristys.toFixed(0);
+		}
+	</script>
+</body>
+
+</html>

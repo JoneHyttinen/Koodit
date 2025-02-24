@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Päiväsakko</title>
+</head>
+
+<body>
+    <h3>Päiväsakko</h3>
+
+    <form>
+        <label>Nettotulot:</label>
+        <input type="text" id="nettotulot" size="5">
+        <input type="button" id="painike" value="Laske päiväsakko" onclick="laskePaivasakko()">
+    </form>
+    
+    <p id="vastaus"></p>
+
+    <script>
+        function laskePaivasakko() {
+            let nettotulot = Number(document.getElementById("nettotulot").value);
+            let päiväsakko = ( nettotulot - 255 ) / 60;
+            document.getElementById("vastaus").innerHTML = "Päiväsakko on " + 
+            päiväsakko.toFixed(2) + " euroa";
+        }
+    </script>
+</body>
+
+</html>

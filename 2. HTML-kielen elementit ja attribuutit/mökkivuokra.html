@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mökkivuokra per henkilö</title>
+<style>
+label {
+	display: block;
+	width: 6em;
+	float: left;
+} 
+</style>
+<!-- 
+Tee ohjelma, millä voi laske mökkivuokran. Ohjelma kysyy vuokran ja osallistujien määrän 
+ja kertoo vuokran per henkilö.
+ -->
+</head>
+<body>
+	<h3>Mökkivuokra per henkilö</h3>
+
+	<form>
+		<p>
+			<label>Vuokra:</label> 
+			<input type="text" id="vuokra" size="5">
+		</p>
+		<p>
+			<label>Osallistujat:</label> 
+			<input type="text" id="maara" size="3">
+		</p>
+		<p>
+			<input type="button" value="Laske vuokra" onclick="laskeVuokra()">
+		</p>
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+	
+	<script>
+	function laskeVuokra() {
+        let vuokra = Number(document.getElementById("vuokra").value);
+        let maara = Number(document.getElementById("maara").value);
+        let vuokranmaara = vuokra / maara;
+        document.getElementById("vastaus").innerHTML = "Vuokra per henkilö on " + 
+        vuokranmaara.toFixed(2) + " euroa ";
+	}
+</script>
+</body>
+</html>
