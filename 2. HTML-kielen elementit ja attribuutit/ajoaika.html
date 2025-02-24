@@ -21,12 +21,12 @@
 	<script>
 		function muunnaMinuutit() {
             let minuutit = Number(document.getElementById("minuutit").value);
-            let tunnit = Math.floor(60/1);
-            let minuutteja = tunnit % 60;
-            let pyoristys = minuutteja = match.Ceil(0-59);
-            document.getElementById("vastaus").innerHTML = " Tunteja " + tunnit.toFixed(0) + " ja minuutteja "
-            + minuutteja.toFixed(0) + " <br>Pyöristettynä lähimpään tuntiin ylöspäin "
-             + pyoristys.toFixed(0);
+            let tunnit = Math.floor(minuutit / 60);
+            let minuutteja = minuutit % 60;
+            let pyoristys = Math.ceil(minuutit / 60);
+            document.getElementById("vastaus").innerHTML = " Tunteja " + tunnit + " ja minuutteja "
+            + minuutteja + "<br>Pyöristettynä lähimpään tuntiin ylöspäin "
+             + pyoristys;
 		}
 	</script>
 </body>

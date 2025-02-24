@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Palkka</title>
+	<!-- 
+Tee ohjelma, joka laskee palkan. Ohjelma kysyy bruttopalkan, veroprosentin ja laskee käteen jäävän osuuden palkasta, 
+veron, työttömyysvakuutusmaksun (0,59 %) ja työeläkevakuutusmaksun (7,15 %).
+
+Veron                    palkka * veroprosentti / 100.0 
+Työttömyysvakuutusmaksu  palkka * 0.59 / 100 
+Työeläkevakuutusmaksu    palkka * 7.15 / 100
+Käteen jää               palkka - vero - työttömyysvakuutusmaksu - työeläkevakuutusmaksu
+ -->
+</head>
+
+<body>
+	<h3>Palkka</h3>
+
+	<form>
+		<p>
+			<label>Bruttopalkka:</label>
+			<input type="text" id="palkka" size="5">
+		</p>
+		<p>
+			<label>Veroprosentti:</label>
+			<input type="text" id="veroprosentti" size="3">
+		</p>
+		<p>
+			<input type="button" id="painike" value="Laske palkka" onclick="laskePalkka()">
+		</p>
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+
+	<script>
+		function laskePalkka() {
+            let palkka = Number(document.getElementById("palkka").value);
+            let veroprosentti = Number(document.getElementById("veroprosentti").value);
+            let vero = palkka * veroprosentti / 100.0;
+            let tyottomyysvakuutusmaksu = palkka * 0.59 / 100;
+            let tyoelakevakuutusmaksu = palkka * 7.15 / 100;
+            let kateen = palkka - vero - tyottomyysvakuutusmaksu - tyoelakevakuutusmaksu;
+            document.getElementById("vastaus").innerHTML = "Käteen jää " +
+            kateen.toFixed(2);
+		}
+	</script>
+</body>
+
+</html>
