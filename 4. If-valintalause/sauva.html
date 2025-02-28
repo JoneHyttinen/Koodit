@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sauvan pituus</title>
+	<!--  
+	Ohjelma laskee sauvakävelyssä, perinteisessä ja luisteluhiihdossa käytettävän sauvan pituuden. 
+	Kaavat sauvan pituuden laskemiseen ovat:
+	luistelu: käyttäjän pituus * 0.9 
+	perinteinen: käyttäjän pituus * 0.85 
+	kävely: käyttäjän pituus * 0.68 
+	-->
+	<style>
+		label {
+			display: block;
+			width: 5em;
+			float: left;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Sauvan pituus</h3>
+
+	<form>
+		<p>
+			<label>Pituutesi:</label>
+			<input type="text" id="pituus" size="3"> cm
+		</p>
+		<p>
+			<label>Laji:</label>
+			<input type="text" id="laji" size="10">
+		</p>
+		<input type="button" id="painike" value="Laske sauvan pituus" onclick="laskeSauva()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+
+	<script>
+		function laskeSauva() {
+            let pituus = Number(document.getElementById("pituus").value);
+            let laji = document.getElementById("laji").value;
+            let luistelu = pituus * 0.9;
+            let perinteinen = pituus * 0.85;
+            let kavely = pituus * 0.68;
+            if (laji == "luistelu") {
+                document.getElementById("vastaus").innerHTML = "Sauvan pituus on " + luistelu.toFixed(0) + " cm ";
+            }
+			else if (laji == "perinteinen") {
+				document.getElementById("vastaus").innerHTML = "Sauvan pituus on " + perinteinen.toFixed(0) + " cm ";
+			}
+			else if (laji == "kävely") {
+				document.getElementById("vastaus").innerHTML = "Sauvan pituus on " + kavely.toFixed(0) + " cm ";
+			}
+		}
+	</script>
+</body>
+
+</html>
