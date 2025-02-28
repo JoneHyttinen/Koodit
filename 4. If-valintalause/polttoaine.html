@@ -42,13 +42,13 @@ Ohjelma kertoo, onko 95, 98 vain diesel kalleinta.
            let b95 = Number(document.getElementById("b95").value)
            let b98 = Number(document.getElementById("b98").value)
            let diesel = Number(document.getElementById("diesel").value)
-           if (b95 > b98 & diesel) {
+           if (b95 > b98 && diesel < b95) {
             document.getElementById("vastaus").innerHTML = "95 on kallein";
            }
-           else if (diesel > b95 & b98) {
+           else if (diesel > b95 && b98 < diesel) {
             document.getElementById("vastaus").innerHTML = "Diesel on kallein";
            }
-           else if (b98 > b95 & diesel) {
+           else if (b98 > b95 & diesel < b98) {
             document.getElementById("vastaus").innerHTML = "98 on kallein";
            }
         }
