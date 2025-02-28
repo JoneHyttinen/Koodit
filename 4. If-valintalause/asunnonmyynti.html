@@ -25,12 +25,12 @@ Välityspalkkio lasketaan hinta * (4.96 / 100).
 
 	<script>
 		function laskePalkkio() {
-            let hinta = Number(document.getElementById("Hinta").value);
+            let hinta = Number(document.getElementById("hinta").value);
             let valityspalkkio = hinta * (4.96 / 100);
             if (valityspalkkio < 3100) {
             valityspalkkio = 3100
             };
-            document.getElementById("vastaus").innerHTML = "Välityspalkkio on " +
+            document.getElementById("vastaus").innerHTML = "Myyntipalkkio on " +
             valityspalkkio.toFixed(2) + " euroa";
 		}
 	</script>
