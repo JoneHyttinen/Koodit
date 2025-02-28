@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Arvosana</title>
+</head>
+
+<body>
+	<h3>Arvosana</h3>
+
+	<form>
+		<label>Pisteet (0-30): </label>
+		<input type="text" name="pisteet" id="pisteet" size="3">
+		<input type="button" id="painike" value="Kerro arvosana" onClick="kerroArvosana()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+
+	<script>
+		function kerroArvosana() {
+            let pisteet = Number(document.getElementById("pisteet").value)
+            if (pisteet >= 27 && pisteet <=30) {
+                document.getElementById("vastaus").innerHTML = "Arvosana on kiitettävä eli 5";
+            }   
+            else if (pisteet >= 24 && pisteet <=26) {
+                document.getElementById("vastaus").innerHTML = "Arvosana on erinomainen eli 4";
+            }
+            else if (pisteet >= 21 && pisteet <=23) {
+                document.getElementById("vastaus").innerHTML = "Arvosana on hyvä eli 3";
+            }
+            else if (pisteet >= 18 && pisteet <=20) {
+                document.getElementById("vastaus").innerHTML = "Arvosana on tyydyttävä eli 2";
+            }
+            else if (pisteet >= 15 && pisteet <=17) {
+                document.getElementById("vastaus").innerHTML = "Arvosana on heikko eli 1";
+            }
+            else if (pisteet < 15) {
+                document.getElementById("vastaus").innerHTML = "Arvosana on hylätty eli 0"
+            }
+		}
+	</script>
+</body>
+
+</html>
