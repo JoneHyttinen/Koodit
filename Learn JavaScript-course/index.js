@@ -1,28 +1,22 @@
 // document.getElementById("count-el").innerText = 5
 
-//let count = 5
-//console.log(count)
+let username = "per"
 
-// function increment() {
-//     console.log("The button was clicked")
-// }
+let message = "You have three new notifications"
 
-// function numero() {
-//     console.log(5)
-//     console.log(4)
-//     console.log(3)
-//     console.log(2)
-//     console.log(1)
-// }
+console.log(message + username)
 
-let lapsCompleted = 0
+let countEl = document.getElementById("count-el")
 
-function incrementLap() {
-    lapsCompleted = lapsCompleted + 1
+console.log(countEl)
+
+let count = 0
+
+function increment() {
+    count = count + 1
+    countEl.innerText = count
 }
 
-incrementLap()
-incrementLap()
-incrementLap()
-
-console.log(lapsCompleted)
+function save() {
+    console.log(count)
+}
