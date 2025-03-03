@@ -45,13 +45,13 @@ Ohjelma kertoo, onko 95, 98 vain diesel kalleinta.
            if (b95 > b98 && diesel < b95) {
             document.getElementById("vastaus").innerHTML = "95 on kallein";
            }
-           else if (diesel > b95 && b98 < diesel) {
-            document.getElementById("vastaus").innerHTML = "Diesel on kallein";
-           }
-           else if (b98 > b95 && diesel < b98) {
+           else if (b98 > diesel) {
             document.getElementById("vastaus").innerHTML = "98 on kallein";
            }
+           else if (diesel > b98) {
+            document.getElementById("vastaus").innerHTML = "Diesel on kallein";
         }
+    }
     </script>
 </body>
 
