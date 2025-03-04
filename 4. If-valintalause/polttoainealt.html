@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Polttoaine</title>
+    <!--  
+Ohjelma kertoo, onko 95, 98 vain diesel kalleinta.
+	-->
+    <style>
+        label {
+            display: block;
+            width: 5em;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Polttoaine</h3>
+
+    <form>
+
+        <label>95:</label>
+        <input type="text" id="b95" size="5"><br>
+
+        <label>98:</label>
+        <input type="text" id="b98" size="5"><br>
+
+        <label>Diesel:</label>
+        <input type="text" id="diesel" size="5"><br>
+
+        <input type="button" id="painike" value="Kallein" onclick="kerro()">
+    </form>
+
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <p id="vastaus"></p>
+
+    <script>
+        function kerro() {
+           let b95 = Number(document.getElementById("b95").value)
+           let b98 = Number(document.getElementById("b98").value)
+           let diesel = Number(document.getElementById("diesel").value)
+           let suurin = Math.max(b95, b98, diesel)
+            if (suurin == b95) {
+                document.getElementById("vastaus").innerHTML = "95 on kallein";
+            }
+           else if (suurin == b98) {
+                document.getElementById("vastaus").innerHTML = "98 on kallein";
+           }
+           else if (suurin == diesel) {
+                document.getElementById("vastaus").innerHTML = "Diesel on kallein";
+           }
+    }
+    </script>
+</body>
+
+</html>
