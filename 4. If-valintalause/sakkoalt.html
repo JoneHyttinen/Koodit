@@ -25,25 +25,27 @@
 	<script>
 		function kerro() {
             let nopeus = Number(document.getElementById("nopeus").value);
+            let teksti;
             if (nopeus <= 60) {
-                document.getElementById("vastaus").innerHTML = "Ei ylinopeutta";
+                teksti = "Ei ylinopeutta";
             }
             else if (nopeus < 70) {
-                document.getElementById("vastaus").innerHTML = "Liikennevirhemaksu on 100.00";
+                teksti = "Liikennevirhemaksu on 100.00";
             }
             else if (nopeus <= 75) {
-                document.getElementById("vastaus").innerHTML = "Liikennevirhemaksu on 170.00";
+                teksti = "Liikennevirhemaksu on 170.00";
             }
             else if (nopeus <= 80) {
-                document.getElementById("vastaus").innerHTML = "Liikennevirhemaksu on 200.00";
+                teksti = "Liikennevirhemaksu on 200.00";
             }
             else if (nopeus >= 81) {
-                document.getElementById("vastaus").innerHTML = "Menee päiväsakolle";
+                teksti = "Menee päiväsakolle";
             }
 			else {
-				document.getElementById("vastaus").innerHTML = "Arvossa on virhe"
+				teksti = "Arvossa on virhe"
 			}
 			
+            document.getElementById("vastaus").innerHTML = teksti;
 		}
 
 	</script>
