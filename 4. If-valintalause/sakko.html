@@ -37,9 +37,12 @@
             else if (nopeus >= 76 && nopeus <=80) {
                 document.getElementById("vastaus").innerHTML = "Liikennevirhemaksu on 200.00";
             }
-            else {
+            else if (nopeus >= 81) {
                 document.getElementById("vastaus").innerHTML = "Menee päiväsakolle";
             }
+			else {
+				teksti = "Arvossa on virhe"
+			}
 			
 		}
 
