@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<style>
+		label {
+			display: block;
+			width: 9em;
+			float: left;
+		}
+	</style>
+	<title>Vertausluvut</title>
+<!-- 
+D’Hondtin menetelmällä lasketaan Suomen vaaleissa puolueen edustajien vertausluvut. 
+Aluksi lasketaan puolueen saama kokonaisäänimäärä. Sen jälkeen ehdokkaat asetetaan 
+järjestykseen henkilökohtaisten äänimäärien perusteella. Jokainen ehdokas saa 
+vertausluvun siten, että eniten ääniä saanut ehdokas saa vertausluvukseen 
+kokonaisäänimäärän, toiseksi eniten ääniä saanut saa 1/2 kokonaisäänimäärästä, 
+kolmanneksi tullut saa 1/3 jne. Kaava on  Ä/p, jossa Ä on kokonaisäänimäärä 
+ja p ehdokkaan järjestysluku. Tee ohjelma, joka näyttää yhden puolueen vertausluvut.
+ -->
+</head>
+
+<body>
+	<h3>Vertausluvut</h3>
+
+	<form>
+		<p>
+			<label>Kokonaisäänimäärä:</label>
+			<input type="text" id="aanet" size="5">
+		</p>
+		<p>
+			<label>Ehdokkaiden määrä:</label>
+			<input type="text" id="maara" size="3">
+		</p>
+		<p>
+			<input type="button" id="painike" value="Näytä vertausluvut" onclick="naytaVertausluvut()">
+		</p>
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+
+	<script>
+		function naytaVertausluvut() {
+            let aanet = Number(document.getElementById("aanet").value);
+            let maara = Number(document.getElementById("maara").value);
+            let teksti = "";
+
+            for (let i = 1; i <= maara; i++) {
+                let vertausluku = aanet / i;
+                teksti += i + ". " + vertausluku.toFixed(0) + "<br>";
+            }
+
+            document.getElementById("vastaus").innerHTML = teksti;
+		}
+	</script>
+</body>
+
+</html>
