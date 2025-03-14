@@ -28,12 +28,17 @@ Tee ohjelma, joka kertoo, miten virkistysrahan käyttö vähenee harrastuskertoj
 			let hinta = Number(document.getElementById("hinta").value);
             let virkistysraha = 100;
             let teksti = "";
-            for (i = 1; i <= 6; i++) {
+            let i = 0;
+
+            while (virkistysraha >= hinta) {
                 virkistysraha = virkistysraha - hinta;
+                i++;
                 teksti = teksti + i + ". Kerran jälkeen jäljellä on " +
-                virkistysraha.toFixed(2) + " euroa <br>";
+                virkistysraha.toFixed(2) + " euroa <br>";                
             }
+
             document.getElementById("vastaus").innerHTML = teksti;
+
 		} nayta();
 	</script>
 </body>
