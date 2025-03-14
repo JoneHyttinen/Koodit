@@ -45,7 +45,7 @@ Ohjelma näyttää halutun luvun 20 kertotaulun. Luvut rivitetään halutulla ta
                 let kerto = luku * i;
                 teksti += kerto + " ";
                 if (i % rivi == 0) {
-                    teksti = teksti + "<br>";
+                    teksti += "<br>";
                 }
             }
             document.getElementById("vastaus").innerHTML = teksti;
