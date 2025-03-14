@@ -43,7 +43,7 @@ Ohjelma näyttää halutun luvun 20 kertotaulun. Luvut rivitetään halutulla ta
 
             for (let i = 1; i <= 20; i++) {
                 let kerto = luku * i;
-                teksti = teksti + kerto + " ";
+                teksti += kerto + " ";
                 if (i % rivi == 0) {
                     teksti = teksti + "<br>";
                 }
