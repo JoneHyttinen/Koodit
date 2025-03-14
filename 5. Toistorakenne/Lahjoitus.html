@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kuukausilahjoitus</title>
+<!-- 
+Feissarit tekevät asiakkaan kanssa vuoden sopimuksen kuukausilahjoituksesta. 
+Näytä vuoden lahjoitukset.
+ -->
+</head>
+
+<body>
+    <h3>Kuukausilahjoitus</h3>
+
+    <form>
+        <label>Kuukausilahjoitus</label>
+        <input type="text" id="lahjoitus" size="4">
+        <input type="button" id="painike" value="Näytä" onclick="nayta()">
+    </form>
+
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <p id="vastaus"></p>
+
+    <script>
+
+        function nayta() {
+            let lahjoitus = Number(document.getElementById("lahjoitus").value);
+            let summa = 0;
+            let teksti = "";
+            for (let i = 1; i <= 12; i++) {
+                summa = summa + lahjoitus;
+                teksti = teksti + "Kuukausi " + i + " lahjoitettu yhteensä " + 
+                summa.toFixed(2) + " euroa <br>";                 
+            }
+            document.getElementById("vastaus").innerHTML = teksti;
+        } nayta();
+    </script>
+</body>
+
+</html>

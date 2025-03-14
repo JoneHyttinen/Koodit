@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Virkistysraha</title>
+<!-- 
+Yritys antaa 100 euroa virkistysrahaa. Työntekijä on päättänyt käyttää sen säännölliseen harrastukseensa. 
+Tee ohjelma, joka kertoo, miten virkistysrahan käyttö vähenee harrastuskertojen lisääntyessä.
+ -->
+</head>
+
+<body>
+	<h3>Virkistysraha</h3>
+
+	<form>
+		<label>Harrastuskerran hinta</label>
+		<input type="text" id="hinta" size="5">
+		<input type="button" id="painike" value="Näytä" onclick="nayta()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+
+	<script>
+		function nayta() {
+			let hinta = Number(document.getElementById("hinta").value);
+            let virkistysraha = 100;
+            let teksti = "";
+            for (i = 1; i <= 6; i++) {
+                virkistysraha = virkistysraha - hinta;
+                teksti = teksti + i + ". Kerran jälkeen jäljellä on " +
+                virkistysraha.toFixed(2) + " euroa <br>";
+            }
+            document.getElementById("vastaus").innerHTML = teksti;
+		} nayta();
+	</script>
+</body>
+
+</html>

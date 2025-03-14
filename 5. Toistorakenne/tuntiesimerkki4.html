@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Toistolause-esimerkkejä</title>
+  </head>
+  <body>
+    <h3>Onnittelut</h3>
+
+    <form>
+      <label>Kerro, kuinka monta kertaa haluat onnitella:</label>
+      <input type="text" id="lkm" size="3" />
+      <input type="button" id="painike" value="Näytä onnittelut" onclick="naytaOnnittelut()" />
+    </form>
+
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <p id="vastaus"></p>
+    <script>
+      function naytaOnnittelut() {
+        let lkm = document.getElementById("lkm").value;
+        let teksti = "";
+        for (let i = 1; i <= lkm; i++) {
+          teksti = teksti + i + ". Paljon onnea! ";
+          if (i % 2 == 0) {
+            teksti += "<br>";
+          }
+        } // end of for
+        document.getElementById("vastaus").innerHTML = teksti;
+      } naytaOnnittelut()// end of function
+    </script>
+  </body>
+</html>
