@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Summamuuttujaesimerkki</title>
+  </head>
+  <body>
+    <h1>Summamuuttujaesimerkki</h1>
+    <div id="tulos"></div>
+    <script>
+      // lasketaan lukujen 1-10 summa
+      function laskeSumma() {
+        // func. defin.
+        let summa = 0;
+        for (var i = 1; i <= 10; i++) {
+          summa = summa + i; // summa += i;
+        } // end of for
+
+        document.getElementById("tulos").innerHTML = "Lukujen 1-10 summa on " + summa;
+      }
+
+      laskeSumma(); // func. call
+    </script>
+  </body>
+</html>

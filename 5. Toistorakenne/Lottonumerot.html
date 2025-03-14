@@ -12,18 +12,19 @@
 	<p id="vastaus"></p>
 
 	<script>
-    
 		function nayta() {
+
         let teksti = "";
-		for (let i=1; i<=40; i++) {
+
+		for (let i = 1; i <= 40; i++) {
             teksti = teksti + i + " ";
             if (i % 10 == 0) {
                 teksti = teksti + "<br>";
             }
         }
-		}
 
-        nayta();
+		document.getElementById("vastaus").innerHTML = teksti;	
+		} nayta();    
 	</script>
 </body>
 

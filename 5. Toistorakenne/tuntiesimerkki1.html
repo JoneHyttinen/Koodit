@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Toistolause-esimerkkejä</title>
+  </head>
+  <body>
+    <h1>Toistolause-esimerkkejä</h1>
+    <div id="viesti"></div>
+    <script>
+      function onnitteleYstavaa() {
+        //tallennetaan tähän html:lle menevä teksti
+        let teksti = "";
+
+        for (let i = 1; i <= 8; i++) {
+          teksti = teksti + "Paljon onnea!<br>";
+        } // end of for
+
+        let j = 0;
+        while (j < 10) {
+          teksti += "Happy birthday!<br>";
+          j++; // j = j + 1;
+        } // end of while
+
+        document.getElementById("viesti").innerHTML = teksti;
+      } // end of function
+
+      onnitteleYstavaa(); // func. call
+    </script>
+  </body>
+</html>
