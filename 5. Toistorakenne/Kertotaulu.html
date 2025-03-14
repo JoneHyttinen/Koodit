@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Kertotaulu</title>
+	<!-- 
+Ohjelma näyttää halutun luvun 20 kertotaulun. Luvut rivitetään halutulla tavalla.
+ -->
+	<style>
+		label {
+			display: block;
+			width: 4em;
+			float: left;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Kertotaulu</h3>
+
+	<form>
+		<p>
+			<label>Luku: </label>
+			<input type="text" id="luku" size="2">
+		</p>
+
+		<p>
+			<label>Rivillä: </label>
+			<input type="text" id="rivilla" size="2">
+		</p>
+		<input type="button" id="painike" value="Näytä" onclick="nayta()">
+	</form>
+
+	<p id="vastaus"></p>
+
+	<script>
+		function nayta() {
+            let luku = Number(document.getElementById("luku").value);
+            let rivi = Number(document.getElementById("rivilla").value);
+            let teksti = "";
+
+            for (let i = 1; i <= 20; i++) {
+                let kerto = luku * i;
+                teksti = teksti + kerto + " ";
+                if (i % rivi == 0) {
+                    teksti = teksti + "<br>";
+                }
+            }
+            document.getElementById("vastaus").innerHTML = teksti;
+		}
+	</script>
+</body>
+
+</html>
