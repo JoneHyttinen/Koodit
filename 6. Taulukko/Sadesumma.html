@@ -17,9 +17,17 @@
 
 	<script>
 		let sademaarat = [47.0, 36.6, 34.7, 37.0, 41.9, 47.5, 61.7, 74.8, 65.4, 69.7, 66.1, 54.6];
+		let summa = 0;
+		let teksti = "";
 
 		function nayta() {
-
+			for (let i = 0; i < sademaarat.length; i++) {
+				console.log(sademaarat[i]);
+				summa = (sademaarat[i]) + (sademaarat[i+1]);
+				console.log(summa);
+				teksti += summa.toFixed(1);	 
+			} 
+			document.getElementById("vastaus").innerHTML = "Sademäärä vuodessa on " + teksti + " mm ";
 		}
 
 		nayta();
