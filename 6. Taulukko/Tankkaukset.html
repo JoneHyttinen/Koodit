@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tankkaukset</title>
+	<!-- 
+ Tee ohjelma, jolla voidaan lisätä ja näyttää tankkauksia.
+	-->
+</head>
+
+<body>
+	<h3>Tankkaukset</h3>
+
+	<form>
+		<label>Määrä</label>
+		<input type="text" id="maara" size="5">
+		<input type="button" id="painike" value="Lisää" onclick="lisaaTankkaus()">
+	</form>
+
+	<p id="vastaus"></p>
+
+	<script>
+		let tankattu = [45.50, 51.55, 43.70]; // Taulukko tankkauksille 
+
+		function lisaaTankkaus() {
+            let lisattava = Number(document.getElementById("maara").value);
+            let i = 0;
+            let teksti = "";
+
+            while (i < tankattu.length) {
+                teksti += tankattu[i] + " tankattu <br>";
+                i++; 
+            }
+            teksti2 = lisattava.toFixed(2) + 
+            document.getElementById("vastaus").innerHTML = lisattava.toFixed(2) + " litraa";
+        
+		}
+	</script>
+</body>
+
+</html>
