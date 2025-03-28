@@ -27,14 +27,18 @@
 		function lisaaTankkaus() {
             let lisattava = Number(document.getElementById("maara").value);
             let i = 0;
+			let summa = 0;
             let teksti = "";
+			let teksti2 = "";
 
-            while (i < tankattu.length) {
-                teksti += tankattu[i] + " tankattu <br>";
-                i++; 
+            for (i = 0; i < tankattu.length; i++) {
+                teksti = tankattu[i] + " litraa <br>";
+				teksti += teksti; 
+				summa += tankattu[i]; 
             }
-            teksti2 = lisattava.toFixed(2) + 
-            document.getElementById("vastaus").innerHTML = lisattava.toFixed(2) + " litraa";
+            teksti2 = lisattava.toFixed(2) + " litraa <br>" + "Yhteensä " + 
+			summa.toFixed(2) + " litraa";
+            document.getElementById("vastaus").innerHTML = "Tankkaukset<br>" + teksti + teksti2;
         
 		}
 	</script>
