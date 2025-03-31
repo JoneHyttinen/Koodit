@@ -22,7 +22,7 @@
 	<p id="vastaus"></p>
 
 	<script>
-		let tankattu = [45.50, 51.55, 43.70]; // Taulukko tankkauksille 
+		let tankattu = [45.50, 51.55, 43.70, 45.50, 35.60, 20.00]; // Taulukko tankkauksille 
 
 		function lisaaTankkaus() {
             let lisattava = Number(document.getElementById("maara").value);
@@ -32,15 +32,14 @@
 			let teksti2 = "";
 
             for (i = 0; i < tankattu.length; i++) {
-                teksti = tankattu[i] + " litraa <br>";
-				teksti += teksti; 
+                teksti += tankattu[i].toFixed(2) + " litraa <br>";
+				console.log(teksti);
 				summa += tankattu[i]; 
             }
-            teksti2 = lisattava.toFixed(2) + " litraa <br>" + "Yhteensä " + 
-			summa.toFixed(2) + " litraa";
-            document.getElementById("vastaus").innerHTML = "Tankkaukset<br>" + teksti + teksti2;
-        
-		}
+
+            teksti2 = "Yhteensä " + summa.toFixed(2) + " litraa";
+			document.getElementById("vastaus").innerHTML = "Tankkaukset<br>" + teksti + teksti2;
+		}		
 	</script>
 </body>
 
