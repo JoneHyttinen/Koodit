@@ -19,4 +19,5 @@ function increment() {
 
 function save() {
     console.log(count)
+    countEl.innerText = count
 }
