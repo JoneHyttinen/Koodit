@@ -30,14 +30,13 @@
             let i = 0;
 			let summa = 0;
             let teksti = "";
-			let teksti2 = "";
 
             for (let i = 0; i < lisattava; i++) {
                 teksti += tankattu[i].toFixed(2) + " litraa<br>";
 				summa += tankattu[i]; 
             }
-            teksti2 = "Yhteensä " + summa.toFixed(2) + " litraa";
-			document.getElementById("vastaus").innerHTML = "Tankkaukset<br>" + teksti + teksti2;
+            teksti += "Yhteensä " + summa.toFixed(2) + " litraa";
+			document.getElementById("vastaus").innerHTML = "Tankkaukset<br>" + teksti;
 		}		
 	</script>
 </body>
