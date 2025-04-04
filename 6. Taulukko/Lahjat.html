@@ -29,11 +29,10 @@
     <script>
         let lahjatoiveet = ["Maija;Lomamatka", "Matti;Mökkiloma", "Liisa;Ulkomaan matka", "Leena;Hotelliloma", "Erkki;Kotimaan matka"];  // Tyhjä taulukko
         let teksti = "";
-        let i = 0;
 
         function nayta() {
-            for (i = 0; i < lahjatoiveet.length; i++) {
-                teksti += lahjatoiveet[i] + " toivoo lahjaa "  
+            for (let i = 0; i < lahjatoiveet.length; i++) {
+                teksti += lahjatoiveet.split() + " toivoo lahjaa "  
             }
         }
 

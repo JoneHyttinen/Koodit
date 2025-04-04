@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Syntymävuosi</title>
+<!-- 
+Tee ohjelma, joka kysyy syntymävuoden ja kertoo iän. Tarkasta, että syntymävuosi ei 
+ole tätä vuotta suurempi eli ikä on vähintään nolla.
+ -->
+</head>
+
+<body>
+	<h3>Syntymävuosi</h3>
+
+	<form>
+		<label>Syntymävuosi:</label>
+		<input type="text" id="svuosi" size="4">
+		<input type="button" id="painike" value="Kerro ikä" onclick="kerroIka()">
+	</form>
+
+	<p id="vastaus"></p>
+
+	<script>
+        let syntymavuosi = Number(document.getElementById("svuosi").value);
+        let teksti = "";
+        let summa = 0;
+        let tanaan = new Date();
+        let vuosi = tanaan.getFullYear();
+
+		function kerroIka() {
+			
+            if (syntymavuosi <= vuosi) {
+                summa = vuosi - syntymavuosi;
+                teksti = "Olet tänä vuonna " + summa + " vuotta"; 
+            }
+            else {
+                teksti = "Syntymävuosi ei voi olla tulevaisuudessa";
+            }
+            document.getElementById("vastaus").innerHTML = teksti;
+		}
+	</script>
+</body>
+
+</html>
