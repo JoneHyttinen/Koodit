@@ -31,7 +31,7 @@ Tee ohjelma, joka kertoo, montako kertaa annettu veriryhmä esiintyy taulukossa.
 
             for (i = 0; i < veriryhmat.length; i++) {
             
-                if (haetturyhma === veriryhmat[i]) {
+                if (haetturyhma.toUpperCase() == veriryhmat[i].toUpperCase()) {
                     lukumaara += 1;
                 }    
             }
