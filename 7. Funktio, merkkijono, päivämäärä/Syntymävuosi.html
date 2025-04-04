@@ -25,18 +25,17 @@ ole tätä vuotta suurempi eli ikä on vähintään nolla.
 	<script>
         let syntymavuosi = Number(document.getElementById("svuosi").value);
         let teksti = "";
-        let summa = 0;
         let tanaan = new Date();
-        let vuosi = tanaan.getFullYear();
+        tanaan = tanaan.getFullYear();
+        let ika = tanaan - syntymavuosi;
 
 		function kerroIka() {
 			
-            if (syntymavuosi <= vuosi) {
-                summa = vuosi - syntymavuosi;
-                teksti = "Olet tänä vuonna " + summa + " vuotta"; 
+            if (ika < 0) {
+                teksti = "Syntymävuosi ei voi olla tulevaisuudessa"; 
             }
             else {
-                teksti = "Syntymävuosi ei voi olla tulevaisuudessa";
+                teksti = "Olet tänä vuonna " + ika + " vuotta";
             }
             document.getElementById("vastaus").innerHTML = teksti;
 		}
