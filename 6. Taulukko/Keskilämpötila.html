@@ -24,14 +24,10 @@ Tee ohjelma, mikä näyttää Helsingin koko vuoden keskilämpötilat.
 
             for (i = 0; i < lampotilat.length; i++) {
                 teksti += (i + 1) + ". " + lampotilat[i].toFixed(1) + "<br>";
+                summa += lampotilat[i]; 
             }
 
-            let summa2 = 0;
-
-            for (i = 0; i < lampotilat.length; i++) {
-                summa2 += lampotilat[i];   
-            }
-            let keskiarvo = summa2 / lampotilat.length;
+            let keskiarvo = summa / lampotilat.length;
             teksti += "<br>Lämpötilojen keskiarvo on " + keskiarvo.toFixed(1);
             document.getElementById("vastaus").innerHTML = teksti;
 			
