@@ -23,14 +23,14 @@ ole tätä vuotta suurempi eli ikä on vähintään nolla.
 	<p id="vastaus"></p>
 
 	<script>
-        let syntymavuosi = Number(document.getElementById("svuosi").value);
-        let teksti = "";
-        let tanaan = new Date();
-        tanaan = tanaan.getFullYear();
-        let ika = tanaan - syntymavuosi;
+        
 
 		function kerroIka() {
-			
+			let syntymavuosi = document.getElementById("svuosi").value;
+            let teksti = "";
+            let tanaan = new Date().getFullYear();
+            let ika = tanaan - syntymavuosi;
+
             if (ika < 0) {
                 teksti = "Syntymävuosi ei voi olla tulevaisuudessa"; 
             }
