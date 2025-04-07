@@ -22,11 +22,12 @@
 			let hetu = document.getElementById("hetu").value;
             let teksti = "";
             let alku = hetu.substring(0,5);
+            let vali = hetu.charAt(6);
 
             if (hetu.length != 11) {
                 teksti = "Hetu ei ole ok";
             }
-            else if (hetu.charAt(6) != "-") {
+            else if (vali != "-" && vali != "+" && vali != "A") {
                 teksti = "Hetu ei ole ok";
             }
             else if (isNaN(alku)) {
