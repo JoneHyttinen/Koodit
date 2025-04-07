@@ -34,9 +34,9 @@
             let teksti = "";
 
             for (let i = 0; i < lahjatoiveet.length; i++) {
-                let saaja = lahjatoiveet[i].split(";",1);
-                
-                let toive = lahjatoiveet[i].split(saaja);
+                let SaajaJaToive = lahjatoiveet[i].split(";");
+                let saaja = SaajaJaToive[0];
+                let toive = SaajaJaToive[1];
                 
                 teksti += saaja + " toivoo lahjaa " + toive + "<br>"; 
             }
