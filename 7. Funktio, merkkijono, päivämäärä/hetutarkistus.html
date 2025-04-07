@@ -19,7 +19,24 @@
 
 	<script>
 		function kerro() {
-			
+			let hetu = document.getElementById("hetu").value;
+            let teksti = "";
+            let alku = hetu.substring(0,5);
+
+            if (hetu.length != 11) {
+                teksti = "Hetu ei ole ok";
+            }
+            else if (hetu.charAt(6) != "-") {
+                teksti = "Hetu ei ole ok";
+            }
+            else if (isNaN(alku)) {
+                teksti = "Hetu ei ole ok";
+            }
+            else {                
+                teksti = "Hetu on ok";
+            }
+            
+            document.getElementById("vastaus").innerHTML = teksti;
 		}
 	</script>
 </body>
