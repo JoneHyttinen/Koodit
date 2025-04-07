@@ -28,12 +28,19 @@
 
     <script>
         let lahjatoiveet = ["Maija;Lomamatka", "Matti;Mökkiloma", "Liisa;Ulkomaan matka", "Leena;Hotelliloma", "Erkki;Kotimaan matka"];  // Tyhjä taulukko
-        let teksti = "";
+        
 
         function nayta() {
+            let teksti = "";
+
             for (let i = 0; i < lahjatoiveet.length; i++) {
-                teksti += lahjatoiveet.split() + " toivoo lahjaa "  
+                let saaja = lahjatoiveet[i].split(";",1);
+                
+                let toive = lahjatoiveet[i].split(saaja);
+                
+                teksti += saaja + " toivoo lahjaa " + toive + "<br>"; 
             }
+            document.getElementById("vastaus").innerHTML = teksti;
         }
 
         nayta();
