@@ -38,17 +38,17 @@
             let etunimi = document.getElementById("etunimi").value;
             let sukunimi = document.getElementById("sukunimi").value;
             var nimi = [etunimi, sukunimi]
-            let muutetutnimet = muutaNimi(etunimi, sukunimi);                        
+            let muutettuNimi = muutaNimi(nimi);                        
             let teksti = "";
 
-            teksti = muutetutnimet;
+            teksti = muutettuNimi;
             
             document.getElementById("vastaus").innerHTML = teksti;
 		}
 
 		function muutaNimi(nimi) {
-            let etunimi = nimi;
-            let sukunimi;
+            let etunimi = nimi[0];
+			let sukunimi = nimi[1];
 
             let muutettuEtunimi = etunimi.charAt(0).toUpperCase() 
             + etunimi.substring(1,).toLowerCase();
@@ -56,7 +56,7 @@
             let muutettuSukunimi = sukunimi.charAt(0).toUpperCase()
             + sukunimi.substring(1,).toLowerCase();
 
-            let teksti = muutettuEtunimi;
+            let teksti = muutettuEtunimi + " " + muutettuSukunimi;
             return teksti;
 		}
 	</script>
