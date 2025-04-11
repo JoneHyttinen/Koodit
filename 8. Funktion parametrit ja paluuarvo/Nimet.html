@@ -47,16 +47,16 @@
 		}
 
 		function muutaNimi(nimi) {
-            let etunimi = nimi[0];
-            let sukunimi = nimi[1];
+            let etunimi = nimi;
+            let sukunimi;
 
-            let muutettuEtunimi = etunimi.substring(0).toUpperCase() 
+            let muutettuEtunimi = etunimi.charAt(0).toUpperCase() 
             + etunimi.substring(1,).toLowerCase();
 
-            let muutettuSukunimi = sukunimi.substring(0).toUpperCase() 
+            let muutettuSukunimi = sukunimi.charAt(0).toUpperCase()
             + sukunimi.substring(1,).toLowerCase();
 
-            let teksti = muutettuEtunimi + " " + muutettuSukunimi;
+            let teksti = muutettuEtunimi;
             return teksti;
 		}
 	</script>
