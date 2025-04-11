@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Opintolainahyvitys</title>
+<!-- 
+Tee ohjelma, jolla voidaan laske opintolainahyvityksen suuruus. 
+Opintolainahyvitys on 40 % siitä opintolainan määrästä, joka ylittää 2500 euroa.
+Tee ohjelmaan funktio laskeHyvitys, jolle menee parametrina opintolainan määrä ja 
+funktio palauttaa opintolainahyvityksen suuruuden.
+-->
+</head>
+
+<body>
+    <h3>Opintolainahyvitys</h3>
+
+    <form>
+        <label>Opintolainan määrä</label>
+        <input type="text" id="laina" size="3">
+        <input type="button" id="painike" value="Laske hyvitys" onclick="laske()">
+    </form>
+
+    <p id="vastaus"></p>
+
+    <script>
+        function laske() {
+            let opintolaina = Number(document.getElementById("laina").value);
+            let teksti = "";
+            let hyvitys = laskeHyvitys(opintolaina);
+
+            if (opintolaina > 2500) {
+                teksti = "Opintolainahyvityksen suuruus on " + hyvitys.toFixed(2);
+            }
+            else {
+                teksti = "Opintolainahyvityksen suuruus on 0.00";
+            }
+
+            document.getElementById("vastaus").innerHTML = teksti;
+        }
+
+        // Tänne pitää tehdä tehtävässä pyydetty funktio
+        function laskeHyvitys(laina) {
+            let ylitys = laina - 2500;
+            let hyvitys = ylitys * 0.4;
+            return hyvitys;
+        }
+    </script>
+</body>
+
+</html>

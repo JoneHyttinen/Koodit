@@ -39,13 +39,31 @@ toinen on tehty painikkeelle ja toinen laskee vähennyksen määrän.
 	<script>
 
 		function laske() {
+            let kulut = Number(document.getElementById("matkakulut").value);
+            let teksti = "";
+            let vahennys = laskeVahennys(kulut);
 
-		}
+
+            if (vahennys <= 0) {
+                teksti = "Vähennys on 0.00";
+            }
+
+            else if (vahennys >= 7000) {
+                teksti = "Vähennys on 7000.00";
+            }
+
+            else {
+                teksti = "Vähennys on " + vahennys.toFixed(2);
+            }
+            
+            document.getElementById("vastaus").innerHTML = teksti;
+        }
 
 		function laskeVahennys(matkakulut) {
-
+            let vahennys = matkakulut - 900;
+            return vahennys                
 		}
-
+   
 	</script>
 </body>
 
