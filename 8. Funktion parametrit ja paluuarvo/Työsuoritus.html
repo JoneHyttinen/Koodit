@@ -42,7 +42,7 @@ Työn tuntihinta on 60 euroa.
 		function laske() {
 			let alku = document.getElementById("alkoi").value;
             let lopetus = document.getElementById("paattyi").value;
-            let tuntiHinta = 60;
+            const tuntiHinta = 60;
             let teksti = "";
 
             let tyoHinta = laskeTyohinta(alku, lopetus, tuntiHinta);
