@@ -53,11 +53,11 @@ Työn tuntihinta on 60 euroa.
 
 		function laskeTyohinta(alkoi, paattyi, tuntihinta) {
             
-            let alkoiTunnit = alkoi.substring(0,1);
-            let alkoiMinuutit = alkoi.substring(3,4);
+            let alkoiTunnit = alkoi.substring(0,2);
+            let alkoiMinuutit = alkoi.substring(3,5);
 
-            let paattyiTunnit = paattyi.substring(0,1);
-            let paattyiMinuutit = paattyi.substring(3,4);
+            let paattyiTunnit = paattyi.substring(0,2);
+            let paattyiMinuutit = paattyi.substring(3,5);
 
             let tyoTunnit = paattyiTunnit - alkoiTunnit;
             let tyoMinuutit = paattyiMinuutit - alkoiMinuutit;
