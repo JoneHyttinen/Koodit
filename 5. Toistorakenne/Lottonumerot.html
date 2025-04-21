@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lottonumerot</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<title>Lottonumerot</title>
-</head>
+  <body>
+    <h3>Lottonumerot</h3>
 
-<body>
-	<h3>Lottonumerot</h3>
+    <p id="vastaus"></p>
 
-	<p id="vastaus"></p>
-
-	<script>
-		function nayta() {
-        let teksti = "";
-		for (let i = 1; i <= 40; i++) {
-            teksti = teksti + i + " ";
-            if (i % 10 == 0) {
-                teksti = teksti + "<br>";
-            }
-        }
-		document.getElementById("vastaus").innerHTML = teksti;	
-		} nayta();    
-	</script>
-</body>
-
+    <script src="lottonumerot.js"></script>
+  </body>
 </html>
