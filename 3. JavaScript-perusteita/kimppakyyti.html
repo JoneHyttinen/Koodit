@@ -58,13 +58,20 @@ p{
 	 
 	<script>
 	function laskeBensat() {
+		
 		let kilometrit = Number(document.getElementById("kilometrit").value);
+
         let kulutus = Number(document.getElementById("kulutus").value);
+
         let litrahinta = Number(document.getElementById("litrahinta").value);
+
         let maara = Number(document.getElementById("maara").value);
+
         let kustannus = kulutus / 100.0 * litrahinta * kilometrit / maara;
+
         document.getElementById("vastaus").innerHTML = "Polttoaine per henkilö on " +
         kustannus.toFixed(2) + " euroa ";
+
 	}
 </script>
 </body>
