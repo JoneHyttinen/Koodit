@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Opiskelija</title>
+    <!-- 
+Listaa objektin tiedot
+ -->
+  </head>
+
+  <body>
+    <h3>Opiskelija</h3>
+
+    <p id="vastaus"></p>
+
+    <script>
+      let opiskelija = {
+        tunnus: "a1234567",
+        nimi: {
+          etunimi: "Pekka",
+          sukunimi: "Virtanen",
+        },
+        osoite: {
+          lahiosoite: "Helsinginkatu 11",
+          postinumero: "00100",
+          postitoimipaikka: "Helsinki",
+        },
+        puhelimet: [
+          { numero: "050-123456", tyyppi: "työ" },
+          { numero: "050-7654321", tyyppi: "henkilökohtainen" },
+          { numero: "050-1234321", tyyppi: "salainen" },
+        ],
+      };
+
+      function listaaOpiskelija() {
+        let teksti = "";
+        teksti +=
+          "Tunnus: " +
+          opiskelija.tunnus +
+          "<br>" +
+          "Nimi: " +
+          opiskelija.nimi.etunimi +
+          " " +
+          opiskelija.nimi.sukunimi +
+          "<br>" +
+          "Osoite: " +
+          opiskelija.osoite.lahiosoite +
+          ", " +
+          opiskelija.osoite.postinumero +
+          ", " +
+          opiskelija.osoite.postitoimipaikka +
+          "<br>";
+
+        document.getElementById("vastaus").innerHTML = teksti;
+      }
+
+      listaaOpiskelija();
+    </script>
+  </body>
+</html>
