@@ -27,7 +27,17 @@
         }
         */
 
-      function nayta() {}
+      function nayta() {
+        let teksti = "";
+        teksti =
+          tyontekija.nimi +
+          " on " +
+          tyontekija.nimike +
+          " yrityksessä " +
+          tyontekija.yritys;
+
+        document.getElementById("vastaus").innerHTML = teksti;
+      }
 
       nayta();
     </script>

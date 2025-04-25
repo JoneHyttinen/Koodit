@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Arvosana</title>
+    <!-- 
+Kurssin arvosana määräytyy siten, että tentin arvosana on 70% ja tehtävien arvosana 30% kurssiarvosanasta. 
+Tee ohjelma, joka kertoo kurssiarvosanan. Arvosana lasketaan tentti*0.7 + tehtavat*0.3. 
+ -->
+  </head>
+
+  <body>
+    <h3>Arvosana</h3>
+
+    <p id="vastaus"></p>
+
+    <script>
+      let tiedot = {
+        nimi: "Pekka Virtanen",
+        tentti: 4,
+        tehtavat: 5,
+        kirjallinen: "H",
+      };
+      /*
+        let tiedot = {
+            nimi: "Maija Laaksonen",
+            tentti: 5,
+            tehtavat: 5,
+            kirjallinen: "-"
+        }
+        */
+
+      function laskeArvosana() {
+        let teksti = "";
+        let arvosana = tiedot.tentti * 0.7 + tiedot.tehtavat * 0.3;
+        arvosana.toFixed(0);
+
+        if (tiedot.kirjallinen == "-") {
+          teksti = "Kirjallinen on pakollinen osa kurssia";
+        } else {
+          teksti = tiedot.nimi + " arvosana " + Math.round(arvosana);
+        }
+        document.getElementById("vastaus").innerHTML = teksti;
+      }
+
+      laskeArvosana();
+    </script>
+  </body>
+</html>
