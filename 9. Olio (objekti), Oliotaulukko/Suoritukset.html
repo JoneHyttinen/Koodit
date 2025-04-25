@@ -48,20 +48,26 @@ Tehtävä on haasteellinen.
       function hae() {
         let teksti = "";
         let kurssiSyote = document.getElementById("tunnus").value;
+        let suoritettu = false;
 
         for (let i = 0; i < suoritukset.length; i++) {
-          if (kurssiSyote == suoritukset[i].tunnus) {
-            for (let i = 0; i < suoritukset[i].arvosanat.length; i++) {
+          if (kurssiSyote === suoritukset[i].tunnus) {
+            suoritettu = true;
+            for (let j = 0; j < suoritukset[i].arvosanat.length; j++) {
               teksti +=
-                suoritukset[i].arvosanat[i].paiva +
+                suoritukset[i].arvosanat[j].paiva +
                 " arvosana " +
-                suoritukset[i].arvosanat[i].arvosana[i] +
+                suoritukset[i].arvosanat[j].arvosana +
                 "<br>";
             }
-          } else if (kurssiSyote != suoritukset[i].tunnus) {
-            teksti = "Suorituksia ei ole tunnuksella " + kurssiSyote;
+            break;
           }
         }
+
+        if (!suoritettu) {
+          teksti = "Suorituksia ei ole tunnuksella " + kurssiSyote;
+        }
+
         document.getElementById("vastaus").innerHTML = teksti;
       }
     </script>
