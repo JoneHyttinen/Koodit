@@ -42,7 +42,26 @@ Tee ohjelma, joka listaa objektitaulukossa olevat kurssit.
         },
       ];
 
-      function listaaKurssit() {}
+      function listaaKurssit() {
+        let teksti = "";
+
+        for (let i = 0; i < kurssit.length; i++) {
+          teksti +=
+            "<p>" +
+            "Tunnus: " +
+            kurssit[i].tunnus +
+            "<br>" +
+            "Nimi: " +
+            kurssit[i].nimi +
+            "<br>" +
+            "Laajuus: " +
+            kurssit[i].laajuus +
+            "<br>" +
+            "Ajoitus: " +
+            kurssit[i].ajoitus;
+        }
+        document.getElementById("vastaus").innerHTML = teksti;
+      }
 
       // Kutsutaan funktioita, joka listaa tiedot
       listaaKurssit();
