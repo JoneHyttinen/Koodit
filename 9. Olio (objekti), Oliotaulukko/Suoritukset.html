@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Suoritukset</title>
+    <!-- 
+Tee ohjelma, jolla voidaan hakea alla olevasta objektitaulukosta suorituksia. 
+Tehtävä on haasteellinen.
+-->
+  </head>
+
+  <body>
+    <h3>Suoritukset</h3>
+    <form>
+      <label>Kurssitunnus</label>
+      <input type="text" id="tunnus" size="11" />
+      <input type="button" id="painike" value="Hae" onclick="hae()" />
+    </form>
+
+    <p id="vastaus"></p>
+
+    <script>
+      let suoritukset = [
+        {
+          nimi: "Johdanto digitaalisiin palveluihin",
+          tunnus: "DIG001IT1A",
+          arvosanat: [
+            { paiva: "14.03.2023", arvosana: "3" },
+            { paiva: "21.03.2023", arvosana: "2" },
+            { paiva: "02.04.2023", arvosana: "4" },
+          ],
+        },
+        {
+          nimi: "Johdanto liiketoimintalähtöiseen ICT:hen",
+          tunnus: "ICB001IT1A",
+          arvosanat: [{ paiva: "15.03.2023", arvosana: "4" }],
+        },
+        {
+          nimi: "Johdanto ICT-infrastruktuuriin ja pilvipalveluihin",
+          tunnus: "ICI001IT1A",
+          arvosanat: [
+            { paiva: "16.03.2023", arvosana: "1" },
+            { paiva: "23.03.2023", arvosana: "4" },
+          ],
+        },
+      ];
+
+      function hae() {
+        let teksti = "";
+        let kurssiSyote = document.getElementById("tunnus").value;
+
+        for (let i = 0; i < suoritukset.length; i++) {
+          if (kurssiSyote == suoritukset[i].tunnus) {
+            for (let a = 0; a < suoritukset[a].arvosanat.length; a++) {
+              teksti +=
+                suoritukset[a].arvosanat[a].paiva +
+                " arvosana " +
+                suoritukset[a].arvosanat[a].arvosana[a] +
+                "<br>";
+            }
+          } else if (kurssiSyote != suoritukset[i].tunnus) {
+            teksti = "Suorituksia ei ole tunnuksella " + kurssiSyote;
+          }
+        }
+        document.getElementById("vastaus").innerHTML = teksti;
+      }
+    </script>
+  </body>
+</html>
