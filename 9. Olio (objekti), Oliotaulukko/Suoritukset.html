@@ -51,11 +51,11 @@ Tehtävä on haasteellinen.
 
         for (let i = 0; i < suoritukset.length; i++) {
           if (kurssiSyote == suoritukset[i].tunnus) {
-            for (let a = 0; a < suoritukset[a].arvosanat.length; a++) {
+            for (let i = 0; i < suoritukset[i].arvosanat.length; i++) {
               teksti +=
-                suoritukset[a].arvosanat[a].paiva +
+                suoritukset[i].arvosanat[i].paiva +
                 " arvosana " +
-                suoritukset[a].arvosanat[a].arvosana[a] +
+                suoritukset[i].arvosanat[i].arvosana[i] +
                 "<br>";
             }
           } else if (kurssiSyote != suoritukset[i].tunnus) {
