@@ -34,6 +34,7 @@ Listaa objektin tiedot
 
       function listaaOpiskelija() {
         let teksti = "";
+
         teksti +=
           "Tunnus: " +
           opiskelija.tunnus +
@@ -49,7 +50,18 @@ Listaa objektin tiedot
           opiskelija.osoite.postinumero +
           ", " +
           opiskelija.osoite.postitoimipaikka +
-          "<br>";
+          "<br>" +
+          "Puhelimet: ";
+        for (let i = 0; i < opiskelija.puhelimet.length; i++) {
+          if (opiskelija.puhelimet[i].tyyppi == "salainen") {
+            opiskelija.puhelimet[i].slice;
+          }
+          teksti +=
+            opiskelija.puhelimet[i].numero +
+            " (" +
+            opiskelija.puhelimet[i].tyyppi +
+            ") ";
+        }
 
         document.getElementById("vastaus").innerHTML = teksti;
       }
