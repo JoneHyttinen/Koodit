@@ -1,32 +1,20 @@
-let kurssit = [
-  {
-    nimi: "Johdanto digitaalisiin palveluihin",
-    tunnus: "DIG001IT1A",
-    laajuus: 5,
-    ajoitus: "1. lukukausi",
+let opiskelija = {
+  tunnus: "a1234567",
+  nimi: {
+    etunimi: "Pekka",
+    sukunimi: "Virtanen",
   },
-  {
-    nimi: "Johdanto ohjelmistokehitykseen",
-    tunnus: "SOF001IT1A",
-    laajuus: 5,
-    ajoitus: "1. lukukausi",
+  osoite: {
+    lahiosoite: "Helsinginkatu 11",
+    postinumero: "00100",
+    postitoimipaikka: "Helsinki",
   },
-  {
-    nimi: "Johdanto liiketoimintalähtöiseen ICT:hen",
-    tunnus: "ICB001IT1A",
-    laajuus: 5,
-    ajoitus: "1. lukukausi",
-  },
-  {
-    nimi: "Johdanto ICT-infrastruktuuriin ja pilvipalveluihin",
-    tunnus: "ICI001IT1A",
-    laajuus: 5,
-    ajoitus: "1. lukukausi",
-  },
-];
+  puhelimet: [
+    { numero: "050-123456", tyyppi: "työ" },
+    { numero: "050-7654321", tyyppi: "henkilökohtainen" },
+    { numero: "050-1234321", tyyppi: "salainen" },
+  ],
+};
+let numeroTyyppi = opiskelija.puhelimet[0].tyyppi;
 
-function listaaKurssit() {
-  let teksti = "";
-
-  console.log(kurssit);
-}
+console.log(numeroTyyppi);
