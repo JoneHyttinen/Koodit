@@ -1,74 +1,69 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="UTF-8">
-	<title>Työtehtävä</title>
-	<style>
-		label {
-			display: block;
-			width: 5em;
-			float: left;
-		}
-	</style>
-<!-- 
+  <head>
+    <meta charset="UTF-8" />
+    <title>Työtehtävä</title>
+    <style>
+      label {
+        display: block;
+        width: 5em;
+        float: left;
+      }
+    </style>
+    <!-- 
 Tee ohjelma, jolla voidaan kirjata työsuoritus ja laskea sen hinta. 
 Työn tuntihinta on 60 euroa. 
  -->
-</head>
+  </head>
 
-<body>
-	<h3>Työtehtävä</h3>
+  <body>
+    <h3>Työtehtävä</h3>
 
-	<form>
-		<p>
-			<label>Alkoi:</label>
-			<input type="text" id="alkoi" size="5">
-		</p>
-		<p>
-			<label>Päättyi:</label>
-			<input type="text" id="paattyi" size="5">
-		</p>
-		<p>
-			<input type="button" id="painike" value="Laske" onclick="laske()">
-		</p>
-	</form>
+    <form>
+      <p>
+        <label>Alkoi:</label>
+        <input type="text" id="alkoi" size="5" />
+      </p>
+      <p>
+        <label>Päättyi:</label>
+        <input type="text" id="paattyi" size="5" />
+      </p>
+      <p>
+        <input type="button" id="painike" value="Laske" onclick="laske()" />
+      </p>
+    </form>
 
-	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
-	<p id="vastaus"></p>
+    <!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+    <p id="vastaus"></p>
 
-	<script>
+    <script>
+      function laske() {
+        let alku = document.getElementById("alkoi").value;
+        let lopetus = document.getElementById("paattyi").value;
+        const tuntiHinta = 60;
+        let teksti = "";
 
-		function laske() {
-			let alku = document.getElementById("alkoi").value;
-            let lopetus = document.getElementById("paattyi").value;
-            const tuntiHinta = 60;
-            let teksti = "";
+        let tyoHinta = laskeTyohinta(alku, lopetus, tuntiHinta);
 
-            let tyoHinta = laskeTyohinta(alku, lopetus, tuntiHinta);
+        teksti = "Työn hinta on " + tyoHinta.toFixed(2) + " euroa";
+        document.getElementById("vastaus").innerHTML = teksti;
+      }
 
-            teksti = "Työn hinta on " + tyoHinta.toFixed(2) + " euroa";
-            document.getElementById("vastaus").innerHTML = teksti;
-		}
+      function laskeTyohinta(alkoi, paattyi, tuntihinta) {
+        let alkoiTunnit = alkoi.substring(0, 2);
+        let alkoiMinuutit = alkoi.substring(3, 5);
 
-		function laskeTyohinta(alkoi, paattyi, tuntihinta) {
-            
-            let alkoiTunnit = alkoi.substring(0,2);
-            let alkoiMinuutit = alkoi.substring(3,5);
+        let paattyiTunnit = paattyi.substring(0, 2);
+        let paattyiMinuutit = paattyi.substring(3, 5);
 
-            let paattyiTunnit = paattyi.substring(0,2);
-            let paattyiMinuutit = paattyi.substring(3,5);
+        let tyoTunnit = paattyiTunnit - alkoiTunnit;
+        let tyoMinuutit = paattyiMinuutit - alkoiMinuutit;
 
-            let tyoTunnit = paattyiTunnit - alkoiTunnit;
-            let tyoMinuutit = paattyiMinuutit - alkoiMinuutit;
-
-            let minuutitTunteina = tyoMinuutit / 60;
-            let summa = tyoTunnit + minuutitTunteina;
-            let tyoHinta = summa * tuntihinta;
-            return tyoHinta;
-		}
-
-	</script>
-</body>
-
+        let minuutitTunteina = tyoMinuutit / 60;
+        let summa = tyoTunnit + minuutitTunteina;
+        let tyoHinta = summa * tuntiHinta;
+        return tyoHinta;
+      }
+    </script>
+  </body>
 </html>

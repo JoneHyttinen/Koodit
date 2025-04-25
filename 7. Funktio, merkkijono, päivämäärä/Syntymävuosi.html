@@ -1,45 +1,44 @@
-
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="UTF-8">
-	<title>Syntymävuosi</title>
-<!-- 
+  <head>
+    <meta charset="UTF-8" />
+    <title>Syntymävuosi</title>
+    <!-- 
 Tee ohjelma, joka kysyy syntymävuoden ja kertoo iän. Tarkasta, että syntymävuosi ei 
 ole tätä vuotta suurempi eli ikä on vähintään nolla.
  -->
-</head>
+  </head>
 
-<body>
-	<h3>Syntymävuosi</h3>
+  <body>
+    <h3>Syntymävuosi</h3>
 
-	<form>
-		<label>Syntymävuosi:</label>
-		<input type="text" id="svuosi" size="4">
-		<input type="button" id="painike" value="Kerro ikä" onclick="kerroIka()">
-	</form>
+    <form>
+      <label>Syntymävuosi:</label>
+      <input type="text" id="svuosi" size="4" />
+      <input
+        type="button"
+        id="painike"
+        value="Kerro ikä"
+        onclick="kerroIka()"
+      />
+    </form>
 
-	<p id="vastaus"></p>
+    <p id="vastaus"></p>
 
-	<script>
-        
+    <script>
+      function kerroIka() {
+        let syntymavuosi = document.getElementById("svuosi").value;
+        let teksti = "";
+        let tanaan = new Date().getFullYear();
+        let ika = tanaan - syntymavuosi;
 
-		function kerroIka() {
-			let syntymavuosi = document.getElementById("svuosi").value;
-            let teksti = "";
-            let tanaan = new Date().getFullYear();
-            let ika = tanaan - syntymavuosi;
-
-            if (ika < 0) {
-                teksti = "Syntymävuosi ei voi olla tulevaisuudessa"; 
-            }
-            else {
-                teksti = "Olet tänä vuonna " + ika + " vuotta";
-            }
-            document.getElementById("vastaus").innerHTML = teksti;
-		}
-	</script>
-</body>
-
+        if (ika < 0) {
+          teksti = "Syntymävuosi ei voi olla tulevaisuudessa";
+        } else {
+          teksti = "Olet tänä vuonna " + ika + " vuotta";
+        }
+        document.getElementById("vastaus").innerHTML = teksti;
+      }
+    </script>
+  </body>
 </html>
