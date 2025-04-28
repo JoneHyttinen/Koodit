@@ -25,7 +25,7 @@ function tulostaTaulukko() {
 // 12. Millä metodilla lisäät uuden alkion taulukon loppuun? Vastaus .push() metodilla.
 
 // BONUS 2. Miksi taulukkoa 'numerot2' ei tulosteta? Miten korjaat virheen?
-// Vastaus: const vakituista muuttujaa ei voida muuttaa jälkeenpäin. Poista toinen numerot2 lista.
+// Vastaus: const vakituista muuttujaa ei voida muuttaa jälkeenpäin. Poista toinen numerot2 lista tai muuta const let:ksi.
 
 // OLIO
 function naytaObjekti() {
@@ -37,7 +37,7 @@ function naytaObjekti() {
   };
   let auto2 = {
     merkki: "Toyota",
-    malli: "Corola",
+    malli: "Corolla",
     vuosi: 2011,
     vari: "sininen",
   };
