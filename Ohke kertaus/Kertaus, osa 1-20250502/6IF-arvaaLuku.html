@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Arvaus</title>
+	<!-- 
+Ohjelma arpoo luvun (1-100) ja kysyy käyttäjältä arvottua lukua, 
+kunnes käyttäjä arvaa oikein. Jos käyttäjä arvaa liian suuren luvun, 
+ohjelma pyytää arvaamaan pienempää lukua. Jos käyttäjä arvaa liian pienen luvun, 
+ohjelma pyytää arvaamaan suurempaa lukua. Kun käyttäjä arvaa luvun oikein, 
+ohjelma onnittelee ja kertoo arvausten määrän.
+ -->
+</head>
+
+<body>
+	<h3>Arvaa</h3>
+	<form>
+		<label>Arvaa, minkä luvun ohjelma on arponut:</label>
+		<input type="text" id="arvaus" size="3">
+		<input type="button" value="Arvaa" onclick="arvaa()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script type="text/javascript">
+		// Näiden muuttujien määrittely ei saa olla funktion arvaa() sisällä 
+		// Jos ne olisivat siellä, niihin laitettaisiin uudet arvot, joka 
+        //kerta kun funktiota kutsutaan (buttonia klikataan)
+		// Näitä kutsutaan globaaleiksi muuttujiksi. 
+        //Globaali muuttuja on hengissä koko sivun olemassaolon ajan.
+		let maara = 0; // Arvausten määrä
+		let arvattava = Math.round((Math.random() * 100) + 1); // Arvattava luku
+		
+
+		function arvaa() {
+			
+		}
+	</script>
+</body>
+
+</html>
