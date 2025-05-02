@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tulospalkkio</title>
+	<!-- 
+Yritys maksaa tulospalkkiota 10% kuukausipalkasta. 
+Tee ohjelma, joka laskee tulospalkkion määrän. 
+ -->
+</head>
+
+<body>
+	<h3>Tulospalkkio</h3>
+
+	<form>
+		<label>Kuukausipalkka:</label>
+		<input type="text" id="kuukausipalkka" size="7" euroa>
+		<input type="button" value="Laske" onclick="kerroTulospalkkio()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<div id="vastaus"></div>
+
+	<script>
+		function kerroTulospalkkio() {
+			// Lomakekentän arvo
+			let kuukausipalkka = Number(document.getElementById("kuukausipalkka").value);
+
+			//kutsu funktiota laskeTulospalkka, joka hoitaa palkan laskemisen. 
+
+			//Vie tulos html-sivulle
+			document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+		}
+
+		// Funktio saa parametrina kuukausiplakan
+		// Funktio laskee kuukausipalkan perusteella tulospalkkion
+		// Funktio palauttaa return lauseella laskennan tuloksen eli tulospalkkiom
+		function laskeTulospalkka(kuukausipalkka) {
+
+		}
+	</script>
+</body>
+
+</html>

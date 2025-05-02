@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cafe</title>
+  </head>
+
+  <body>
+    <h3>Cafe</h3>
+    <form>
+      <p>
+        <input type="button" value="Näytä hinnasto" onclick="naytaHinnasto()" />
+      </p>
+
+      <p>
+        <label>Nimi</label>
+        <input type="text" id="nimi" size="10" />
+        <input
+          type="button"
+          value="Näytä tietty tuote"
+          onclick="naytaTuote()"
+        />
+      </p>
+    </form>
+
+    <div id="vastaus"></div>
+    <div id="vastaus2"></div>
+
+    <script>
+      let hinnasto = [
+        {
+          nimi: "Pieni kahvi",
+          hinta: 3.0,
+        },
+        {
+          nimi: "Suuri kahvi",
+          hinta: 3.5,
+        },
+        {
+          nimi: "Juustosämpylä",
+          hinta: 4.5,
+        },
+        {
+          nimi: "Kinkkusämpylä",
+          hinta: 4.7,
+        },
+        {
+          nimi: "Pulla",
+          hinta: 2.5,
+        },
+      ];
+
+      function naytaTuote() {
+        let nimi = document.getElementById("nimi").value;
+        let teksti = "";
+
+        for (let i = 0; i < hinnasto.length; i++) {
+          if (nimi === hinnasto[i].nimi) {
+            teksti =
+              hinnasto[i].nimi + ": " + hinnasto[i].hinta.toFixed(2) + " €";
+            break;
+          } else {
+            teksti = "Tuotetta ei löytynyt";
+          }
+        }
+        document.getElementById("vastaus").innerHTML = teksti;
+      }
+
+      function naytaHinnasto() {
+        let teksti = "";
+        for (let i = 0; i < hinnasto.length; i++) {
+          teksti +=
+            hinnasto[i].nimi +
+            ": " +
+            hinnasto[i].hinta.toFixed(2) +
+            " €" +
+            "<br>";
+        }
+        document.getElementById("vastaus2").innerHTML = teksti;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Katsatus</title>
+
+    <style>
+      label {
+        display: block;
+        float: left;
+        width: 19em;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Katsastus</h3>
+
+    <form>
+      <label>Katsastuksen tyyppi (katsastus/jälkitarkastus)</label>
+      <input type="text" id="tyyppi" value="katsastus" /> <br />
+
+      <label>Mitataanko päästöt (kyllä/ei)</label>
+      <input type="text" id="paasto" value="kyllä" /> <br />
+
+      <label>Bensiini vai diesel (bensiini/diesel)</label>
+      <input type="text" id="polttoaine" value="bensiini" /> <br />
+
+      <input type="button" value="Laske" onclick="laske()" />
+    </form>
+
+    <div id="vastaus"></div>
+
+    <script>
+      /* if-lause: 
+		Tee ohjelma, jolla voidaan selvittää katsastusasemalla käynnin hinta.  
+		• pelkkä jälkitarkastus maksaa 30 
+		• katsastus maksaa 50 
+		• jos mitataan päästö, bensiiniautolla se on 22 ja dieselautolla 31  */
+
+      function laske() {
+        let tyyppi = document.getElementById("tyyppi").value;
+        let paasto = document.getElementById("paasto").value;
+        let polttoaine = document.getElementById("polttoaine").value;
+
+        let hinta = 0;
+        let teksti = "";
+
+        if (tyyppi === "jälkitarkastus") {
+          hinta = 30;
+        } else if (tyyppi === "katsastus") {
+          hinta = 50;
+        } else {
+          teksti = "Virheellinen katsastustyyppi!";
+          document.getElementById("vastaus").innerHTML = teksti;
+          return;
+        }
+
+        if (paasto === "kyllä") {
+        }
+
+        document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+      }
+    </script>
+  </body>
+</html>

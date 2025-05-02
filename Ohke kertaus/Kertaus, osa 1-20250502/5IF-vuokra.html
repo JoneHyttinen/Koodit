@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8" />
-	<title>Recap</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Recap</title>
+  </head>
 
-<body>
-	<h3>Vuokratulot</h3>
-	<form>
-		<p>Vuokraamme kerhotaloamme. Päivävuokra on 100 euroa. Jos olet ollut jäsen yli 10 vuotta saat 20% alennuksen.</p>
-		<p> Syötä alla oleviin kenttiin tiedot. </p>
-		<br>
-		<label>Kuinka monta vuotta olet ollut jäsen:</label>
-		<input type="text" id="memberTime" size="10">
-		<br>
-		<label>Kuinka monta päivää haluat vuokrata kerhotaloa:</label>
-		<input type="text" id="rentDays" size="10">
-		<br><br><input type="button" value="Laske vuokra" onclick="calculateRent()">
-	</form>
-	<div id="result"></div>
+  <body>
+    <h3>Vuokratulot</h3>
+    <form>
+      <p>
+        Vuokraamme kerhotaloamme. Päivävuokra on 100 euroa. Jos olet ollut jäsen
+        yli 10 vuotta saat 20% alennuksen.
+      </p>
+      <p>Syötä alla oleviin kenttiin tiedot.</p>
+      <br />
+      <label>Kuinka monta vuotta olet ollut jäsen:</label>
+      <input type="text" id="memberTime" size="10" />
+      <br />
+      <label>Kuinka monta päivää haluat vuokrata kerhotaloa:</label>
+      <input type="text" id="rentDays" size="10" />
+      <br /><br /><input
+        type="button"
+        value="Laske vuokra"
+        onclick="calculateRent()"
+      />
+    </form>
+    <div id="result"></div>
 
-	<script>
-
-        function calculateRent() {
-			
-			//lue syötetyt arvot 
-
-			//tee laskutoimitus ja vertailut
-
-			//näytä tulos
-
-			
-            
+    <script>
+      function calculateRent() {
+        //lue syötetyt arvot
+        let vuodet = Number(document.getElementById("memberTime").value);
+        let paivat = Number(document.getElementById("rentDays").value);
+        //tee laskutoimitus ja vertailut
+        let paivaVuokra = paivat * 100; //euroa
+        if (vuodet > 10) {
+          paivaVuokra = paivaVuokra * 0.8;
         }
+        //näytä tulos
+        document.getElementById("result").innerHTML = paivaVuokra;
+      }
     </script>
-
-</body></html>
+  </body>
+</html>

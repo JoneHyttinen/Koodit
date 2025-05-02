@@ -1,31 +1,48 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Recap</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h3>Osamaksu</h3>
     <form>
-        <label>Ostettavan tuotteen hinta:</label>
-        <input type="text" id="price" size="10">
-        <br>
-        <label>Kuukausimaksu:</label>
-        <input type="text" id="monthPay" size="10">
+      <label>Ostettavan tuotteen hinta:</label>
+      <input type="text" id="price" size="10" />
+      <br />
+      <label>Kuukausimaksu:</label>
+      <input type="text" id="monthPay" size="10" />
 
-        <input type="button" value="Maksusuunnitelma" onclick="showMonthlyPayments()">
+      <input
+        type="button"
+        value="Maksusuunnitelma"
+        onclick="showMonthlyPayments()"
+      />
     </form>
     <div id="result"></div>
 
     <script>
+      function showMonthlyPayments() {
+        let hinta = Number(document.getElementById("price").value);
+        let kuukausiMaksu = Number(document.getElementById("monthPay").value);
+        let maksettu = 0;
+        let kk = 0;
+        let teksti = "Lainan maksusuunnitelma: <br>";
 
-        function showMonthlyPayments() {
-           
+        while (maksettu < hinta - kuukausiMaksu) {
+          maksettu += kuukausiMaksu;
+          kk++;
+          teksti +=
+            kk +
+            ". kk: Maksettu " +
+            maksettu +
+            " euroa, jäljellä on " +
+            (hinta + maksettu) +
+            "<br>";
+          document.getElementById("result").innerHTML = teksti;
         }
+      }
     </script>
-
-</body>
-
+  </body>
 </html>
