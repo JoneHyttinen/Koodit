@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>kertaus</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Erilaisia juttuja selaimen konsoliin</h1>
     <form>
-		<label>Luku1:</label>
-		<input type="text" id="luku1" value="5"> <br>
+      <label>Luku1:</label>
+      <input type="text" id="luku1" value="5" /> <br />
 
-        <label>Luku2:</label>
-		<input type="text" id="luku2" value="10"> <br>
+      <label>Luku2:</label>
+      <input type="text" id="luku2" value="10" /> <br />
 
-		<label>Sana1</label>
-		<input type="text" id="sana1" value="Haaga"> <br>
+      <label>Sana1</label>
+      <input type="text" id="sana1" value="Haaga" /> <br />
 
-		<label>Sana2</label>
-		<input type="text" id="sana2" value="Haaga"> <br>
+      <label>Sana2</label>
+      <input type="text" id="sana2" value="Haaga" /> <br />
 
-		<input type="button" value="Click me" onclick="toimi()">
-	</form>
-
-
+      <input type="button" value="Click me" onclick="toimi()" />
+    </form>
 
     <script>
-
-        function toimi() {
-
-            //lue luvut 
-            
-            //laske lukujen luku 1 ja luku2 summa
-            
-            //tulosta summa selaimen konsoliin
-            
-            
-            //laske lukujen luku 1 ja luku2 tulo             
-            //ja tulosta tulos konsoliin
-            
-            
-            //laske paljonko on 100 jaettuna 10
-            //ja tulosta tulos konsoliin
-           
-
-            //lue sana1 ja sana2 arvot
-            //yhdistä sanat sana1 ja sana2
-            //laita sanojen väliin - ja tulosta konsoliin
-            
-            
-        }
+      function toimi() {
+        //lue luvut
+        let lukuYksi = Number(document.getElementById("luku1").value);
+        let lukuKaksi = Number(document.getElementById("luku2").value);
+        //laske lukujen luku 1 ja luku2 summa
+        let lukuSumma = lukuYksi + lukuKaksi;
+        //tulosta summa selaimen konsoliin
+        console.log(lukuSumma);
+        //laske lukujen luku 1 ja luku2 tulo
+        let lukuTulo = lukuYksi * lukuKaksi;
+        //ja tulosta tulos konsoliin
+        console.log(lukuTulo);
+        //laske paljonko on 100 jaettuna 10
+        let jakoLasku = 100 / 10;
+        //ja tulosta tulos konsoliin
+        console.log(jakoLasku);
+        //lue sana1 ja sana2 arvot
+        let sanaYksi = document.getElementById("sana1").value;
+        let sanaKaksi = document.getElementById("sana2").value;
+        //yhdistä sanat sana1 ja sana2
+        let sanat = sanaYksi + "-" + sanaKaksi;
+        //laita sanojen väliin - ja tulosta konsoliin
+        console.log(sanat);
+      }
     </script>
-</body>
-
+  </body>
 </html>

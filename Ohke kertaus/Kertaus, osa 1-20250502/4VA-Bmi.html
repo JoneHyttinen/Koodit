@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Painot</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <h1>Painojen laskentaa</h1>
     <form>
-        <label>Anna pituus (esim. 1.9): </label>
-        <input type="text" id="heigth" />
+      <label>Anna pituus (esim. 1.9): </label>
+      <input type="text" id="height" />
 
-        <label>Anna paino: </label>
-        <input type="text" id="weigth" />
+      <label>Anna paino: </label>
+      <input type="text" id="weight" />
 
-        <input type="button" value="Laske BMI" onclick="calculateBMI()" />
+      <input type="button" value="Laske BMI" onclick="calculateBMI()" />
     </form>
     <p id="BMI"></p>
     <script>
-        function calculateBMI() {
-           
-			//lue syötetyt arvot 
-
-			//tee laskutoimitus 
-
-			//näytä tulos
-        }
+      function calculateBMI() {
+        //lue syötetyt arvot
+        let pituus = Number(document.getElementById("height").value);
+        let paino = Number(document.getElementById("weight").value);
+        //tee laskutoimitus
+        let bmi = paino / (pituus * pituus);
+        //näytä tulos
+        document.getElementById("BMI").innerHTML = "BMI on " + bmi.toFixed(2);
+      }
     </script>
-</body>
-
+  </body>
 </html>
