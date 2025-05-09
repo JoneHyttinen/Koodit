@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="UTF-8">
-	<title>Minigolf</title>
-	<!--  
+  <head>
+    <meta charset="UTF-8" />
+    <title>Minigolf</title>
+    <!--  
 Mökkiläiset pelasivat minigolfia. Alla olevassa taulukossa on tulokset
 let minigolf = new Array(23, 19, 37, 20, 21, 30, 26, 24);
 Tee ohjelma, mikä kertoo
@@ -16,24 +15,39 @@ b)	 taulukossa olevien pelien keskiarvon
 •	Keskiarvo lasketaan jakamalla tulosten summa taulukossa olevien tulosten lukumäärällä (minigolf.length).
 •	toFixed(0)-metodi antaa vastauksen kokonaislukuna
  -->
-</head>
+  </head>
 
-<body>
-	<h3>Minigolf</h3>
+  <body>
+    <h3>Minigolf</h3>
 
-	<div id="pieninsuurin"></div>
-	<div id="keskiarvo"></div>
+    <div id="pieninsuurin"></div>
+    <div id="keskiarvo"></div>
 
-	<script>
-		let minigolf = [23, 19, 37, 20, 21, 30, 26, 24];
+    <script>
+      let minigolf = [23, 19, 37, 20, 21, 30, 26, 24];
+      let keskiarvo = 0;
+      let summa = 0;
+      let teksti = "";
 
-		function kerro() {
-		
-			
-		}
+      function kerro() {
+        minigolf.sort();
+        teksti =
+          "Pienin tulos oli " +
+          minigolf[0] +
+          " " +
+          "Suurin tulos oli " +
+          minigolf[minigolf.length - 1];
+        document.getElementById("pieninsuurin").innerHTML = teksti;
 
-		kerro();	// Funktiota on kutsuttava, jotta se suoritetaan
-	</script>
-</body>
+        for (let i = 0; i < minigolf.length; i++) {
+          summa += minigolf[i];
+        }
+        keskiarvo = summa / minigolf.length;
+        teksti = "Tulosten keskiarvo oli " + keskiarvo.toFixed(0);
+        document.getElementById("keskiarvo").innerHTML = teksti;
+      }
 
+      kerro(); // Funktiota on kutsuttava, jotta se suoritetaan
+    </script>
+  </body>
 </html>

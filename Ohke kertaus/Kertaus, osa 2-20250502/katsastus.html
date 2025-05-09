@@ -56,10 +56,34 @@
           return;
         }
 
-        if (paasto === "kyllä") {
+        if (paasto === "kyllä" && polttoaine === "bensiini") {
+          teksti =
+            "Katsastus maksaa " +
+            hinta +
+            " euroa" +
+            "<br>" +
+            "Päästöt ovat 22 litraa per 100 km";
+        } else if (paasto === "kyllä" && polttoaine === "diesel") {
+          teksti =
+            "Katsastus maksaa " +
+            hinta +
+            " euroa" +
+            "<br>" +
+            "Päästöt ovat 31 litraa per 100 km";
+        } else if (paasto === "ei") {
+          teksti =
+            "Katsastus maksaa " +
+            hinta +
+            " euroa" +
+            "<br>" +
+            "Päästöjä ei mitattu";
+        } else {
+          teksti = "Kerro mitataanko päästöt!";
+          document.getElementById("vastaus").innerHTML = teksti;
+          return;
         }
 
-        document.getElementById("vastaus").innerHTML = "Kirjoita vastaus tänne";
+        document.getElementById("vastaus").innerHTML = teksti;
       }
     </script>
   </body>
