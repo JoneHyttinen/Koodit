@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sähkötarjous</title>
+    <!-- 
+Ohjelma kysyy käyttäjän sähkötarjouksen hinnan ja vertaa sitä vuoden 2024 pörssisähkön keskihintaan, 
+joka oli 4,56 senttiä/kWh.
+Jos tarjouksen hinta on alle 4, kerro hinnan on vuoden 2024 keskihintaa alhaisempi.
+Jos tarjouksen hinta on 4-6 kerro hinnan olevan vuoden 2024 keskihintaa vastaava.
+Jos tarjouksen hinta on yli 6, kerro on vuoden 2024 keskihintaa kalliimpi
+
+Sähköyhtiöt eivät kuitenkaan oikeasti anna näin hyviä tarjouksia.
+ -->
+  </head>
+
+  <body>
+    <h3>Sähkötarjous</h3>
+
+    <form>
+      <label>Tarjoushinta:</label>
+      <input type="text" id="hintatarjous" size="3" /> snt/kWh
+
+      <input type="button" id="painike" value="Kerro" onclick="kerro()" />
+    </form>
+
+    <p id="vastaus"></p>
+
+    <script>
+      let array = ["kikkeli", "pillu"];
+      let kulli = "kulli";
+      array.push(kulli);
+
+      document.getElementById("vastaus").innerHTML = array;
+    </script>
+  </body>
+</html>
