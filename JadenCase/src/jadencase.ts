@@ -5,10 +5,10 @@ function toJadenCase() {
   let splitTweets: string[] = tweet.split(" ");
 
   for (let i = 0; i < splitTweets.length; i++) {
-    splitTweets[i].toUpperCase();
+    splitTweets[i] = splitTweets[i][0].toUpperCase() + splitTweets[i].slice(1);
   }
   
-  return splitTweets.toString;
+  return splitTweets.join(" ");
 }
 
 
